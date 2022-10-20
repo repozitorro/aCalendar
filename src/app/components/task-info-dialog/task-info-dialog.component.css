@@ -1,0 +1,16 @@
+.icon-button {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.container {
+  display: flex;
+  margin: 10px 10px 10px 0;
+  align-items: center;
+}
+
+.item {
+  color: gray;
+  margin-right: 10px;
+  /* line-height: 20px; */
+}

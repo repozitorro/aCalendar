@@ -1,0 +1,50 @@
+.element {
+  display: inline-block;
+  line-height: 24px;
+  width: 24px;
+  height: 24px;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 2px 0;
+
+}
+
+.element:hover {
+  transform: translate(0, -2px);
+}
+
+.today {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.notThisMonth {
+  color: #70757a;
+}
+
+.task-holiday {
+  background-color: rgb(46, 196, 183);
+}
+
+.task-daf {
+  background-color: rgb(108, 167, 217);
+}
+
+.task {
+  height: 25px;
+  display: flex;
+  color: #fff;
+  border-radius: 4px;
+  margin: 5px 2px;
+  text-align: left;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.task-holiday:hover {
+  background-color: rgb(17, 178, 150);
+}
+.task-daf:hover {
+  background-color: rgb(3, 135, 209);
+}

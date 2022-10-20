@@ -1,0 +1,36 @@
+<div class="icon-button">
+  <div class="title">
+    <h1>{{data.title}}</h1>
+  </div>
+  <button style="color: gray;" mat-icon-button (click)="onDelete(data)">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button style="color: gray;" mat-icon-button (click)="editTask(data)">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>
+<div class="container">
+  <mat-icon class="item">calendar_today</mat-icon>
+  <div>Date from -&nbsp;</div>
+  <div>{{data.date.toString() | date}}</div>
+</div>
+
+<div class="container">
+  <mat-icon class="item">calendar_today</mat-icon>
+  <div>Date to -&nbsp;</div>
+  <div>{{data.dateTo.toString() | date}}</div>
+</div>
+
+<div class="container">
+  <mat-icon class="item">place</mat-icon>
+  <div>{{data.location}}</div>
+</div>
+<div class="container">
+  <mat-icon class="item">subject</mat-icon>
+  <div>{{data.description}}</div>
+</div>
+
+<div class="container" *ngIf="data.holiday">
+  <mat-icon class="item">redeem</mat-icon>
+  <div>Holiday</div>
+</div>

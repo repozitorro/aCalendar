@@ -1,0 +1,38 @@
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="title">
+    <mat-label>Add title</mat-label>
+    <input matInput [(ngModel)]="title">
+
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="other">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate [(ngModel)]="date">
+      <input matEndDate [(ngModel)]="dateTo">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="other">
+    <mat-label>Add location</mat-label>
+    <input matInput [(ngModel)]="location">
+    <mat-icon matSuffix>place</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="other">
+    <mat-label>Add description</mat-label>
+    <input matInput [(ngModel)]="description">
+    <mat-icon matSuffix>subject</mat-icon>
+  </mat-form-field>
+
+
+  <mat-slide-toggle color="primary"  [(ngModel)]="holiday">Holiday</mat-slide-toggle>
+
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" (click)="onEdit()">Save</button>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</div>

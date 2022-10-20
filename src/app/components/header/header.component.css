@@ -1,0 +1,26 @@
+.change-icon {
+  margin: 0 10px 0px 50px;
+
+}
+
+.change-button {
+  font-size: 120%;
+}
+
+.left-icon {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.toolbar {
+  color: #5f6368;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+

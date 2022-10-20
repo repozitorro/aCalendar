@@ -1,0 +1,20 @@
+.board {
+  font-size: 12px;
+  width: 100%;
+  max-width: 100%;
+  border-top: 1px solid #dadce0;
+  border-left: 1px solid #dadce0;
+}
+
+.youbi-container {
+  display: flex;
+  width: 100%;
+}
+.youbi {
+  color: #70757a;
+  padding: 0px 10px 0px 10px;
+  width: 100%;
+  text-align: center;
+  flex-grow: 1;
+  border-right: 1px solid #dadce0;
+}
