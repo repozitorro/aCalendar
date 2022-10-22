@@ -18,15 +18,21 @@ export class CalendarService {
   currentDate = moment();
   currentDateStr = this.currentDate.format("MMMM YYYY");
   calendars!: date[][];
+  calendarType: string = 'month';
 
   constructor() {
-    this.setCalendar();
   }
 
   setCalendar() {
-    let startDate: moment.Moment = moment(this.currentDate).startOf('month');
+
+    let startDate: moment.Moment = this.calendarType === 'month'
+      ? moment(this.currentDate).startOf('month')
+      : moment(this.currentDate).startOf('week')
+
     let startIndex: number = startDate.day();
-    let endIndex: number = moment(this.currentDate).endOf('month').date();
+    let endIndex: number = this.calendarType === 'month'
+      ? moment(this.currentDate).endOf('month').date()
+      : moment(this.currentDate).endOf('week').date()
     startDate.subtract(startIndex, 'days');
 
     let weekCount: number = (startIndex + endIndex) < 35 ? 5 : 6;
@@ -43,16 +49,30 @@ export class CalendarService {
     this.calendars = calendars;
   }
 
+  setCalendarType(type: string) {
+    this.calendarType = type;
+    this.setCalendar();
+  }
+
+
   setCurrentDate() {
     this.currentDateStr = this.currentDate.format("MMMM YYYY");
   }
 
-  nextMonth() {
-    this.currentDate.add(1, 'month');
+  onNext() {
+    if (this.calendarType === 'month') {
+      this.currentDate.add(1, 'month');
+    } else {
+      this.currentDate.add(1, 'week');
+    }
+
   }
 
-  returnMonth() {
-    this.currentDate.subtract(1, 'month');
+  onReturn() {
+    if (this.calendarType === 'month') {
+      this.currentDate.subtract(1, 'month');
+    } else {
+      this.currentDate.subtract(1, 'week');
+    }
   }
-
 }

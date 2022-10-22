@@ -1,23 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {CalendarService, date} from '../../services/calendar.service';
+import {Component, Input} from '@angular/core';
+import {CalendarDataInterface} from '../../types/calendarData.interface';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css']
 })
-export class BoardComponent implements OnInit {
-  youbi: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+export class BoardComponent {
+  @Input() calendarData!: CalendarDataInterface;
+  daysWeek: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
-  constructor(
-    public calendarService: CalendarService,
-  ) {
-  }
-
-  ngOnInit(): void {
-  }
-
-  onScroll() {
-  }
+  constructor() {}
 
 }

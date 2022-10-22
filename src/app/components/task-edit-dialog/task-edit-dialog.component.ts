@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import * as _moment from 'moment';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {CalendarService} from '../../services/calendar.service';
 import {Task,TaskService} from '../../services/task.service';
 
 
@@ -23,7 +22,6 @@ export class TaskEditDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<TaskEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public task: Task,
-    private calendarService: CalendarService,
     private taskService: TaskService,
   ) {
   }

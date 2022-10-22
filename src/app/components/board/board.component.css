@@ -6,13 +6,13 @@
   border-left: 1px solid #dadce0;
 }
 
-.youbi-container {
+.board-container {
   display: flex;
   width: 100%;
 }
-.youbi {
+.day-week {
   color: #70757a;
-  padding: 0px 10px 0px 10px;
+  padding: 0 10px 0 10px;
   width: 100%;
   text-align: center;
   flex-grow: 1;

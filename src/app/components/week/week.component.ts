@@ -13,7 +13,7 @@ export class WeekComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log(this.week);
+    ///console.log(this.week);
   }
 
 }

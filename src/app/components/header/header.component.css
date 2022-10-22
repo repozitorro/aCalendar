@@ -1,5 +1,5 @@
 .change-icon {
-  margin: 0 10px 0px 50px;
+  margin: 0 10px 0 50px;
 
 }
 
@@ -14,13 +14,16 @@
 
 .toolbar {
   color: #5f6368;
+  height: 70px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
 }
+
 
 

@@ -26,6 +26,7 @@ import { MatMomentDateModule  } from '@angular/material-moment-adapter';
 import { TaskInfoDialogComponent } from './components/task-info-dialog/task-info-dialog.component';
 import { TaskEditDialogComponent } from './components/task-edit-dialog/task-edit-dialog.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,23 +39,24 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     TaskInfoDialogComponent,
     TaskEditDialogComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatMomentDateModule,
-    MatSlideToggleModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        MatMomentDateModule,
+        MatSlideToggleModule,
+        MatSelectModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
