@@ -1,6 +1,6 @@
-<div>
+<div class="element">
   <div
-    class="element"
+    class="date"
     [class.today]="isToday"
     [class.notThisMonth]="isNotThisMonth"
     (click)="onDate()"
@@ -8,11 +8,15 @@
     {{day.date}}
   </div>
 
-  <div class="task"
-       [ngClass]="{'task-holiday': t.holiday, 'task-daf': !t.holiday}"
-       *ngFor="let t of dateTaskList"
-       (click)="onTask(t)"
-  >
-    {{t.title}}
+
+  <div class="tasks-container">
+    <div class="task"
+         [ngClass]="{'task-holiday': t.holiday, 'task-daf': !t.holiday}"
+         *ngFor="let t of dateTaskList"
+         (click)="onTask(t)"
+    >
+      {{t.title}}
+    </div>
   </div>
+
 </div>
