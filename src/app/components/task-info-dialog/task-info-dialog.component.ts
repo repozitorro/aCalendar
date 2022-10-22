@@ -1,7 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
-import {Task, TaskService} from '../../services/task.service';
+import {TaskService} from '../../services/task.service';
 import {TaskEditDialogComponent} from '../task-edit-dialog/task-edit-dialog.component';
+import {TaskInterface} from '../../types/task.interface';
 
 @Component({
   selector: 'app-task-info-dialog',
@@ -14,7 +15,7 @@ export class TaskInfoDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<TaskEditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Task,
+    @Inject(MAT_DIALOG_DATA) public data: TaskInterface,
     private taskService: TaskService,
     public dialog: MatDialog,
   ) {
@@ -23,12 +24,12 @@ export class TaskInfoDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onDelete(task: Task) {
+  onDelete(task: TaskInterface): void {
     this.taskService.deleteTask(task);
     this.dialogRef.close();
   }
 
-  editTask(task: Task) {
+  editTask(task: TaskInterface): void {
     this.dialogRef.close();
     const dialogRef = this.dialog.open(TaskEditDialogComponent, {
       width: '300px',

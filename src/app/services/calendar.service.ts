@@ -1,15 +1,6 @@
 import {Injectable} from '@angular/core';
 import * as moment from 'moment';
-
-export interface date {
-  date: number,
-  moment: moment.Moment,
-  task?: Task[]
-}
-
-export interface Task {
-  title: string,
-}
+import {DateInterface} from '../types/date.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +8,7 @@ export interface Task {
 export class CalendarService {
   currentDate = moment();
   currentDateStr = this.currentDate.format("MMMM YYYY");
-  calendars!: date[][];
+  calendars!: DateInterface[][];
   calendarType: string = 'month';
 
   constructor() {
@@ -36,9 +27,9 @@ export class CalendarService {
     startDate.subtract(startIndex, 'days');
 
     let weekCount: number = (startIndex + endIndex) < 35 ? 5 : 6;
-    let calendars: date[][] = [];
+    let calendars: DateInterface[][] = [];
     for (let week = 0; week < weekCount; week++) {
-      let weekRow: date[] = [];
+      let weekRow: DateInterface[] = [];
       for (let day = 0; day < 7; day++) {
         weekRow.push({date: startDate.get('date'), moment: moment(startDate)});
         startDate.add(1, 'days')

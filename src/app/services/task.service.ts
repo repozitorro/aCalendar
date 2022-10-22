@@ -1,33 +1,14 @@
 import {Injectable} from '@angular/core';
 import * as moment from 'moment';
 import {BehaviorSubject} from 'rxjs';
-
-export interface Task {
-  title: string,
-  date: moment.Moment,
-  dateTo: moment.Moment
-  location?: string,
-  description?: string,
-  holiday: boolean
-}
+import {TaskInterface} from '../types/task.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-
-  taskList: Task[] = [
-    {
-      title: 'today\'s task',
-      date: moment().startOf('days'),
-      dateTo: moment().startOf('days'),
-      location: 'Your home',
-      description: 'play',
-      holiday: false
-    },];
-
-
-  taskListSubject = new BehaviorSubject<Task[]>(this.taskList);
+  taskList: TaskInterface[] = [];
+  taskListSubject = new BehaviorSubject<TaskInterface[]>(this.taskList);
 
   constructor() {
   }
@@ -61,7 +42,7 @@ export class TaskService {
   }
 
   editTask(
-    data: Task,
+    data: TaskInterface,
     title: string,
     date: moment.Moment,
     dateTo: moment.Moment,
@@ -82,7 +63,7 @@ export class TaskService {
     this.taskListSubject.next(this.taskList);
   }
 
-  deleteTask(task: Task) {
+  deleteTask(task: TaskInterface) {
     const index = this.taskList.findIndex(t => t === task);
     if (!(index === -1)) {
       this.taskList.splice(index, 1);

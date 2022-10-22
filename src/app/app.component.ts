@@ -7,9 +7,10 @@ import {CalendarDataInterface} from './types/calendarData.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'aCalendar';
   calendarData!: CalendarDataInterface;
+
   constructor(
     private taskService: TaskService,
   ) {
@@ -19,8 +20,7 @@ export class AppComponent implements OnInit{
     this.taskService.initTasks()
   }
 
-  onChanged($event: CalendarDataInterface) {
+  onChanged($event: CalendarDataInterface): void {
     this.calendarData = $event;
-    console.log($event)
   }
 }

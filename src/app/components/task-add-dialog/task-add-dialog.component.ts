@@ -4,11 +4,7 @@ import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-mome
 import * as _moment from 'moment';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {TaskService} from '../../services/task.service';
-
-export interface DialogData {
-  title: string,
-  date: _moment.Moment,
-}
+import {DialogDataInterface} from '../../types/dialogData.interface';
 
 @Component({
   selector: 'app-task-add-dialog',
@@ -30,7 +26,7 @@ export class TaskAddDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<TaskAddDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: DialogDataInterface,
     private taskService: TaskService,
   ) {
     this.date = data.date
@@ -39,7 +35,7 @@ export class TaskAddDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSave() {
+  onSave(): void {
     if (this.title && this.date && this.dateTo) {
       this.taskService.addTask(this.title, this.date, this.dateTo, this.holiday, this.location, this.description);
     }

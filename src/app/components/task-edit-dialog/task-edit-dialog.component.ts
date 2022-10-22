@@ -1,7 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import * as _moment from 'moment';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Task,TaskService} from '../../services/task.service';
+import {TaskService} from '../../services/task.service';
+import {TaskInterface} from '../../types/task.interface';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class TaskEditDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<TaskEditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public task: Task,
+    @Inject(MAT_DIALOG_DATA) public task: TaskInterface,
     private taskService: TaskService,
   ) {
   }
@@ -30,7 +31,7 @@ export class TaskEditDialogComponent implements OnInit {
     this.initValues()
   }
 
-  initValues() {
+  initValues(): void {
     this.date = this.task.date;
     this.dateTo = this.task.dateTo;
     this.title = this.task.title
@@ -40,7 +41,7 @@ export class TaskEditDialogComponent implements OnInit {
 
   }
 
-  onEdit() {
+  onEdit(): void {
     if (this.title && this.date && this.dateTo) {
       this.taskService.editTask(this.task, this.title, this.date, this.dateTo, this.holiday, this.location, this.description);
     }

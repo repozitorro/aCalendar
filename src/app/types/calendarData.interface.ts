@@ -1,6 +1,6 @@
-import {date} from '../services/calendar.service';
+import {DateInterface} from './date.interface';
 
 export interface CalendarDataInterface {
-  weeks: date[][];
+  weeks: DateInterface[][];
   typeCalendar: string;
 }

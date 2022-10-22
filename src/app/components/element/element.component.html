@@ -4,7 +4,9 @@
     [class.today]="isToday"
     [class.notThisMonth]="isNotThisMonth"
     (click)="onDate()"
-  >{{day.date}}</div>
+  >
+    {{day.date}}
+  </div>
 
   <div class="task"
        [ngClass]="{'task-holiday': t.holiday, 'task-daf': !t.holiday}"

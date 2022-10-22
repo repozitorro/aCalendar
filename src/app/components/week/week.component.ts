@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {date} from '../../services/calendar.service';
+import {DateInterface} from '../../types/date.interface';
 
 @Component({
   selector: 'app-week',
@@ -7,13 +7,12 @@ import {date} from '../../services/calendar.service';
   styleUrls: ['./week.component.css']
 })
 export class WeekComponent implements OnInit {
-  @Input() week: date[] = [];
+  @Input() week: DateInterface[] = [];
 
   constructor() {
   }
 
   ngOnInit(): void {
-    ///console.log(this.week);
   }
 
 }

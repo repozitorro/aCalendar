@@ -10,6 +10,7 @@ export class BoardComponent {
   @Input() calendarData!: CalendarDataInterface;
   daysWeek: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
-  constructor() {}
+  constructor() {
+  }
 
 }
